@@ -1,12 +1,17 @@
-import HomeScreen from "@app/screens/HomeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const Stack = createNativeStackNavigator();
+import BottomTabNavigator from "./BottomTabNavigator";
+import { IRootStackParamList } from "./navigationTypes";
+
+const Stack = createNativeStackNavigator<IRootStackParamList>();
 
 const RootStackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Root" component={BottomTabNavigator} />
     </Stack.Navigator>
   );
 };
