@@ -13,3 +13,5 @@ const createRandomUser = () => {
 };
 
 export const users = Array.from({ length: 10 }, createRandomUser);
+
+export const currentUser = users[0];
