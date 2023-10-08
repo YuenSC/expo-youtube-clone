@@ -1,3 +1,4 @@
+import VideoPlayingScreen from "@app/screens/VideoPlayingScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import BottomTabNavigator from "./BottomTabNavigator";
@@ -12,6 +13,7 @@ const RootStackNavigator = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
+      <Stack.Screen name="VideoPlaying" component={VideoPlayingScreen} />
     </Stack.Navigator>
   );
 };

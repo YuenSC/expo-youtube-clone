@@ -15,6 +15,7 @@ declare global {
 
 export type IRootStackParamList = {
   Root: NavigatorScreenParams<IRootTabParamList> | undefined;
+  VideoPlaying: { videoId: string; videoUrl: string };
 };
 
 export type IRootStackScreenProps<Screen extends keyof IRootStackParamList> =

@@ -9,6 +9,7 @@ const createRandomVideos = () => {
     author: faker.internet.userName(),
     viewCount: faker.number.int({ max: 100_000_000, min: 0 }),
     createAt: faker.date.past().toISOString(),
+    videoUrl: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
   };
 };
 

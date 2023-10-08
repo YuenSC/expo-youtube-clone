@@ -23,9 +23,14 @@ const HomeScreen = ({ navigation }: IRootTabScreenProps<"Home">) => {
 
   const animatedHeaderStyles = useAnimatedStyle(() => {
     return {
-      transform: [{ translateY: withTiming(translateY.value) }],
+      transform: [
+        {
+          translateY: withTiming(translateY.value),
+        },
+      ],
     };
   });
+
   const animatedViewStyles = useAnimatedStyle(() => {
     return {
       paddingTop: withTiming(headerHeight + translateY.value, {
@@ -110,7 +115,17 @@ const HomeScreen = ({ navigation }: IRootTabScreenProps<"Home">) => {
         contentContainerStyle={{
           width: "100%",
         }}
-        renderItem={({ item }) => <VideoCard video={item} />}
+        renderItem={({ item }) => (
+          <Pressable
+            onPress={() =>
+              navigation.navigate("VideoPlaying", {
+                videoId: item.id,
+                videoUrl: item.videoUrl,
+              })
+            }>
+            <VideoCard video={item} />
+          </Pressable>
+        )}
       />
     </Animated.View>
   );
